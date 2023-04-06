@@ -21,10 +21,17 @@ public class SQLDatabaseConnection {
 				+ "loginTimeout=30;";
 		 		ArrayList<String> returnedVals = new ArrayList<String>();
 		 		ResultSet resultSet = null;
-		 		if(type.equals(Command.LOGIN)) {
+		 		if(type.equals(Command.LOGIN) || type.equals(Command.CHECKB)) {
+		 			String command = null;
+		 			if(type.equals(Command.LOGIN)) {
+		 				command = "Select Username, PassWord from dbo.Login where Username like \'" + prompt +"\'";
+		 			}
+		 			else if(type.equals(Command.CHECKB)) {
+		 				command = "Select id, Balance, Type from dbo.Accounts " + prompt;
+		 			}
 		 			try (Connection connection = DriverManager.getConnection(connectionUrl);) {
 		 				Statement statement = connection.createStatement(); {
-		 					String selectSQl = "Select Username, PassWord from dbo.Login where Username like \'" + prompt +"\'";
+		 					String selectSQl = command;
 		 					resultSet = statement.executeQuery(selectSQl);
 		 					while(resultSet.next()) {
 		 						returnedVals.add(resultSet.getString(2));
@@ -50,13 +57,18 @@ public class SQLDatabaseConnection {
 		if(foundPass.equals(PassWord)) return true;
 		else return false;
 		
-		
-		
-		
+	}
+	
+	public static double getUserBalance(String userName, String accountType) {
+		String prompt = "WHERE id like \'" + userName + "\' "+ "AND  Type like \'" + accountType + "\'";
+		Command getBalance = Command.CHECKB;
+		double balance = Double.parseDouble(connect(prompt, getBalance));
+		return balance;
 	}
 	
 	
     public static void main(String[] args) {
-    	System.out.println(matchUserLogin("clar0126","Hoverboard1456!"));
+    	//System.out.println(matchUserLogin("clar0126","Hoverboard1456!"));
+    	System.out.println(getUserBalance("clar0126","Checking"));
     }
 }
