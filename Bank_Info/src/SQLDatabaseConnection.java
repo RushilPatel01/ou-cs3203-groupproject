@@ -58,9 +58,7 @@ public class SQLDatabaseConnection {
 		 			try(Connection connection = DriverManager.getConnection(connectionUrl); PreparedStatement prepsUpdateProduct = connection.prepareStatement(updateSql, Statement.RETURN_GENERATED_KEYS);){
 		 				prepsUpdateProduct.execute();
 		 				resultSet = prepsUpdateProduct.getGeneratedKeys();
-		 				while(resultSet.next()) {
-		 					System.out.println(resultSet.getString(1));
-		 				}
+		 				
 		 			}
 		 			catch (Exception e) {
 		 	            e.printStackTrace();
@@ -105,13 +103,26 @@ public class SQLDatabaseConnection {
 		String updateBank = "Update dbo.Accounts " + "set Balance = " + convertedBal + "where id like \'" + userName + "\'" + "AND Type like \'" + accountType + "\' " ;
 		Command update = Command.UPDATEB;
 		connect(updateBank, update);
-		System.out.println(getUserBalance(userName,accountType));
 	}
 	
+	public static boolean withdrawal(String userName, String accountType, double withdraw) {
+		double currentBalance = getUserBalance(userName, accountType);
+		boolean sufficientFunds = false;
+		if(currentBalance >= withdraw) {
+			deposit(userName, accountType, -withdraw);
+			sufficientFunds = true;
+		}
+		else {
+			//insufficient funds message to front display
+			sufficientFunds = false;
+		}
+		return sufficientFunds;
+	}
 	
     public static void main(String[] args) {
     	//System.out.println(matchUserLogin("clar0126","Hoverboard1456!"));
-    	deposit("clar0126", "Checking", 400);
-    	
+    	//deposit("clar0126", "Checking", 400);
+    	System.out.println(withdrawal("clar0126", "Checking", 9000));
+    	System.out.println(getUserBalance("clar0126", "Checking"));
     }
 }
