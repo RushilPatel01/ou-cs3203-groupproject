@@ -1,4 +1,4 @@
 
 public enum Command {
-		LOGIN, CHECKB,UPDATEB ;
+		LOGIN, CHECKB,UPDATEB, ACCOUNTDISP ;
 }
