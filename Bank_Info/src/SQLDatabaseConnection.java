@@ -11,6 +11,11 @@ public class SQLDatabaseConnection {
     // Connect to your database.
     // Replace server name, username, and password with your credentials
 	
+	/*
+	 * input: prompt that specifies action to be taken by database, type Enum control of action
+	 * output: ArrayList that holds all desired database query info
+	 * function: connects to database using JDBC and executes desired action
+	 */
 	public static ArrayList<String> connect(String prompt, Command type) {
 		 String connectionUrl =
 			        "jdbc:sqlserver://bankmainproject.database.windows.net:1433;" 
@@ -53,7 +58,7 @@ public class SQLDatabaseConnection {
 		             e.printStackTrace();
 		 			}
 		 		}
-		 		else if(type.equals(Command.UPDATEB)) {
+		 		else if(type.equals(Command.UPDATEB)) { //only scrip that actually changes database
 		 			String updateSql = prompt;
 		 			try(Connection connection = DriverManager.getConnection(connectionUrl); PreparedStatement prepsUpdateProduct = connection.prepareStatement(updateSql, Statement.RETURN_GENERATED_KEYS);){
 		 				prepsUpdateProduct.execute();
@@ -70,7 +75,11 @@ public class SQLDatabaseConnection {
 		 		}
 		 		else return returnedVals;
 	}
-	
+	/*
+	 * input: userName (username as in database), password (the users attempted sign on password)
+	 * output: boolean determining if successful login (matching database info with user input)
+	 * function: determines if a user's login information matches a database record
+	 */
 	public static boolean matchUserLogin(String userName, String PassWord) {
 		Command getUserPass = Command.LOGIN;
 		String foundPass = connect(userName, getUserPass).get(0);
@@ -79,6 +88,11 @@ public class SQLDatabaseConnection {
 		
 	}
 	
+	/*
+	 * input: username for account info, accountType string (either Checking or Savings) determining account selection
+	 * output: double returning user's current account balance
+	 * function: gets a users current bank balance based on specified account type
+	 */
 	public static double getUserBalance(String userName, String accountType) {
 		String prompt = "WHERE id like \'" + userName + "\' "+ "AND  Type like \'" + accountType + "\'";
 		Command getBalance = Command.CHECKB;
@@ -86,6 +100,11 @@ public class SQLDatabaseConnection {
 		return balance;
 	}
 	
+	/*
+	 * input: username for account info
+	 * output: string array holding options of current user's accounts for UI display
+	 * function: can be linked with the UI to display a drop down menu of user's current account types
+	 */
 	public static String[] getAccountTypes(String userName) {
 		Command getExistingAccounts = Command.ACCOUNTDISP;
 		ArrayList<String> AvailableAccounts = connect(userName,getExistingAccounts);
@@ -95,7 +114,11 @@ public class SQLDatabaseConnection {
 		}
 		return foundTypes;
 	}
-	
+	/*
+	 * input: username for account info, accountType for specified account, deposit for transaction amount
+	 * output: none
+	 * function: deposits money into a user's account in database record
+	 */
 	public static void deposit(String userName, String accountType,  double deposit ) {
 		double currentBalance = getUserBalance(userName, accountType);
 		double newBalance = currentBalance + deposit;
@@ -105,6 +128,11 @@ public class SQLDatabaseConnection {
 		connect(updateBank, update);
 	}
 	
+	/*
+	 * input: username for account info, accountType for specified account, withdraw for money to be taken from account
+	 * output: boolean determining if the user had sufficient funds for withdraw
+	 * function: takes money from user's account if available
+	 */
 	public static boolean withdrawal(String userName, String accountType, double withdraw) {
 		double currentBalance = getUserBalance(userName, accountType);
 		boolean sufficientFunds = false;
@@ -118,6 +146,7 @@ public class SQLDatabaseConnection {
 		}
 		return sufficientFunds;
 	}
+	
 	
     public static void main(String[] args) {
     	//System.out.println(matchUserLogin("clar0126","Hoverboard1456!"));
