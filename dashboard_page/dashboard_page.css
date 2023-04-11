@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    list-style: none;
+    padding: 0;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #841617;
+    margin: 0;
+    padding: 0;
+}
+
+.side_menu {
+    position: fixed;
+    width: 350px;
+    background-color: #FDF9D8;
+    height: 100%;
+}
+
+.side_menu a {
+    line-height: 100px;
+    color: #841617;
+    font-weight: bold;
+    font-size: 25px;
+    margin-left: 80px;
+}
+
+.hover_effect:hover {
+    font-size: 27px;
+    border-bottom: solid black;
+}
+
+.yOUr_Money_Logo {
+    width: 300px;
+    margin-left: 18px;
+    margin-top: 15px;
+    padding-bottom: 125px;
+}
