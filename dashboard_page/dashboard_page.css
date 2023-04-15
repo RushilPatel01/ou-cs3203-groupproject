@@ -39,6 +39,8 @@ body {
     padding-bottom: 125px;
 }
 
+/* Accounts */
+
 .accounts_box {
     position: fixed;
     margin-left: 550px;
@@ -72,6 +74,10 @@ body {
     color: #c73537;
 }
 
+/* ------------------- */
+
+/* Balance */
+
 .balance_box {
     position: fixed;
     margin-left: 1100px;
@@ -89,9 +95,13 @@ body {
 }
 
 .balance {
-    padding-left: 220px;
+    padding-left: 15px;
     padding-top: 20px;
 }
+
+/* ------------------- */
+
+/* Transactions */
 
 .transaction_box {
     position: fixed;
@@ -113,3 +123,5 @@ body {
     padding-left: 220px;
     padding-top: 25px;
 }
+
+/* ------------------- */
