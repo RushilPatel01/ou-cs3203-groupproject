@@ -38,3 +38,78 @@ body {
     margin-top: 15px;
     padding-bottom: 125px;
 }
+
+.accounts_box {
+    position: fixed;
+    margin-left: 550px;
+    margin-top: 300px;
+    width: 250px;
+    height: 250px;
+    background-color: #FDF9D8;
+    border-radius: 10px;
+}
+
+.accounts_header {
+    padding-left: 52px;
+    padding-top: 7px;
+    border-bottom: 3px solid black;
+}
+
+.accounts {
+    background-color: #FDF9D8;
+    margin-top: 30px;
+    margin-left: 30px;
+    font-size: 17px;
+}
+
+.accounts a {
+    color: #841617;
+    font-weight: bold;
+    line-height: 23px;
+}
+
+.accounts_hover:hover {
+    color: #c73537;
+}
+
+.balance_box {
+    position: fixed;
+    margin-left: 1100px;
+    margin-top: 50px;
+    width: 500px;
+    height: 125px;
+    background-color: #FDF9D8;
+    border-radius: 10px;
+}
+
+.balance_header {
+    padding-left: 180px;
+    padding-top: 7px;
+    border-bottom: 3px solid black;
+}
+
+.balance {
+    padding-left: 220px;
+    padding-top: 20px;
+}
+
+.transaction_box {
+    position: fixed;
+    margin-left: 1100px;
+    margin-top: 250px;
+    width: 500px;
+    height: 600px;
+    background-color: #FDF9D8;
+    border-radius: 10px;
+}
+
+.transaction_header {
+    padding-left: 145px;
+    padding-top: 7px;
+    border-bottom: 3px solid black;
+}
+
+.transactions {
+    padding-left: 220px;
+    padding-top: 25px;
+}
