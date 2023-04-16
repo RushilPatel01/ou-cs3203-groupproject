@@ -17,7 +17,7 @@ body {
 }
 
 .user_input {
-    top: 180px;
+    top: 200px;
     position: absolute;
     width: 280px;
 }
@@ -45,17 +45,6 @@ body {
     cursor: pointer;
     border-radius: 10px;
     background-color: white;
-}
-
-.button_wrapper {
-    text-align: center;
-    padding-bottom: 0px;
-    margin-bottom: 0px;
-    font-weight: bold;
-    font-size: 15px;
-    cursor: pointer;
-    margin: 125px auto;
-    border-radius: 10px;
 }
 
 #login {
