@@ -7,5 +7,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/Users/19189/Downloads/sqljdbc_12.2.0.0_enu (1)/sqljdbc_12.2/enu/mssql-jdbc-12.2.0.jre11.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
