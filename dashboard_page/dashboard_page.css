@@ -45,14 +45,14 @@ body {
     position: fixed;
     margin-left: 550px;
     margin-top: 300px;
-    width: 250px;
+    width: 260px;
     height: 250px;
     background-color: #FDF9D8;
     border-radius: 10px;
 }
 
 .accounts_header {
-    padding-left: 52px;
+    padding-left: 56px;
     padding-top: 7px;
     border-bottom: 3px solid black;
 }
@@ -101,9 +101,9 @@ body {
 
 /* ------------------- */
 
-/* Transactions */
+/* Session Activity */
 
-.transaction_box {
+.session_activity_box {
     position: fixed;
     margin-left: 1100px;
     margin-top: 250px;
@@ -113,13 +113,13 @@ body {
     border-radius: 10px;
 }
 
-.transaction_header {
-    padding-left: 145px;
+.session_activity_header {
+    padding-left: 128px;
     padding-top: 7px;
     border-bottom: 3px solid black;
 }
 
-.transactions {
+.session_activity {
     padding-left: 220px;
     padding-top: 25px;
 }
