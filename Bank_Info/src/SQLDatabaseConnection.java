@@ -73,7 +73,9 @@ public class SQLDatabaseConnection {
 		 		if(returnedVals.isEmpty()) {
 		 			return null;
 		 		}
-		 		else return returnedVals;
+		 		else {
+					return returnedVals;
+				}
 	}
 	/*
 	 * input: userName (username as in database), password (the users attempted sign on password)
@@ -83,8 +85,12 @@ public class SQLDatabaseConnection {
 	public static boolean matchUserLogin(String userName, String PassWord) {
 		Command getUserPass = Command.LOGIN;
 		String foundPass = connect(userName, getUserPass).get(0);
-		if(foundPass.equals(PassWord)) return true;
-		else return false;
+		if(foundPass.equals(PassWord)) {
+			return true;
+		}
+		else {
+			return false;
+		}
 		
 	}
 	

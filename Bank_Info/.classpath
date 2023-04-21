@@ -6,7 +6,8 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/19189/Downloads/sqljdbc_12.2.0.0_enu (1)/sqljdbc_12.2/enu/mssql-jdbc-12.2.0.jre11.jar"/>
+	<classpathentry kind="lib" path="C:\Program Files\Microsoft JDBC DRIVER 12.2 for SQL Server\sqljdbc_12.2.0.0_enu\sqljdbc_12.2\enu\mssql-jdbc-12.2.0.jre11.jar"/>
+	<classpathentry kind="lib" path="C:\Program Files\JavaServlet\servlet-2.2.8-sources.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
