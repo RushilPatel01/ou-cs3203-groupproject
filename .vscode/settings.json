@@ -1,0 +1,5 @@
+{
+    "java.configuration.updateBuildConfiguration": "interactive",
+    "appService.defaultWebAppToDeploy": "/subscriptions/ff2ac103-a4bb-461a-90e1-d9faca77631f/resourceGroups/FrontEnd/providers/Microsoft.Web/sites/yOUrmoneyfrontend",
+    "appService.deploySubpath": "dashboard_page"
+}

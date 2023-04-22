@@ -1,0 +1,5 @@
+{
+    "appService.preDeployTask": "publish-release",
+    "appService.deploySubpath": "bin\\Release\\net7.0\\publish",
+    "appService.defaultWebAppToDeploy": "/subscriptions/ff2ac103-a4bb-461a-90e1-d9faca77631f/resourceGroups/yOUrMoney_group/providers/Microsoft.Web/sites/yOUrMoney"
+}

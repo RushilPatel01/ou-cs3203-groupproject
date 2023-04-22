@@ -3,7 +3,7 @@ window.onload=function(){
 
     redirect_login.addEventListener('click', function(){
         // Pass through the login page
-        //window.location.href = "/dashboard_page/dashboard_page_yOUr_Account_Checking.html";
+        window.location.href = "/dashboard_page/dashboard_page_yOUr_Account_Checking.html";
 
         // get the form data
         let form = document.getElementById("login-form");
