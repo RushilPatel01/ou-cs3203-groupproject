@@ -77,12 +77,14 @@ public class SQLDatabaseConnection {
 					return returnedVals;
 				}
 	}
-
 	/*
+	 * 
+	 *
+	 *
 	 * input: userName (username as in database), password (the users attempted sign on password)
 	 * output: boolean determining if successful login (matching database info with user input)
 	 * function: determines if a user's login information matches a database record
-	 */
+	 *
 	public static boolean matchUserLogin(String userName, String PassWord) {
 		Command getUserPass = Command.LOGIN;
 		String foundPass = connect(userName, getUserPass).get(0);
@@ -94,6 +96,7 @@ public class SQLDatabaseConnection {
 		}
 		
 	}
+	*/
 	
 	/*
 	 * input: username for account info, accountType string (either Checking or Savings) determining account selection
