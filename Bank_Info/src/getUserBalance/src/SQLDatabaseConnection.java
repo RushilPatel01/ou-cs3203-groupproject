@@ -77,7 +77,6 @@ public class SQLDatabaseConnection {
 					return returnedVals;
 				}
 	}
-
 	/*
 	 * input: userName (username as in database), password (the users attempted sign on password)
 	 * output: boolean determining if successful login (matching database info with user input)
@@ -159,7 +158,6 @@ public class SQLDatabaseConnection {
     	//System.out.println(matchUserLogin("clar0126","ClassTime123!"));
     	//deposit("clar0126", "Checking", 400);
     	//System.out.println(withdrawal("clar0126", "Checking", 9000));
-    	//System.out.println(getUserBalance("clar0126", "Checking"));
-		System.out.println("Connection Established");
-	}
+    	System.out.println(getUserBalance("clar0126", "Checking"));
+    }
 }

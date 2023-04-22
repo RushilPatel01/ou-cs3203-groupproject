@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\skbro\\OneDrive - University of Oklahoma\\SCHOOL\\8 - SPRING 2023\\SOFTWARE\\Group Project\\MyFirstAzureWebApp\\MyFirstAzureWebApp.csproj",
+      "projectUniqueName": "C:\\Users\\skbro\\OneDrive - University of Oklahoma\\SCHOOL\\8 - SPRING 2023\\SOFTWARE\\Group Project\\ou-cs3203-groupproject\\MyFirstAzureWebApp\\MyFirstAzureWebApp.csproj",
       "projectName": "MyFirstAzureWebApp",
-      "projectPath": "C:\\Users\\skbro\\OneDrive - University of Oklahoma\\SCHOOL\\8 - SPRING 2023\\SOFTWARE\\Group Project\\MyFirstAzureWebApp\\MyFirstAzureWebApp.csproj",
+      "projectPath": "C:\\Users\\skbro\\OneDrive - University of Oklahoma\\SCHOOL\\8 - SPRING 2023\\SOFTWARE\\Group Project\\ou-cs3203-groupproject\\MyFirstAzureWebApp\\MyFirstAzureWebApp.csproj",
       "packagesPath": "C:\\Users\\skbro\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\skbro\\OneDrive - University of Oklahoma\\SCHOOL\\8 - SPRING 2023\\SOFTWARE\\Group Project\\MyFirstAzureWebApp\\obj\\",
+      "outputPath": "C:\\Users\\skbro\\OneDrive - University of Oklahoma\\SCHOOL\\8 - SPRING 2023\\SOFTWARE\\Group Project\\ou-cs3203-groupproject\\MyFirstAzureWebApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\skbro\\AppData\\Roaming\\NuGet\\NuGet.Config",
