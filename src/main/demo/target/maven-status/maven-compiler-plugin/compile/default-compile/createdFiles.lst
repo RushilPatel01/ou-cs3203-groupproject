@@ -1,0 +1,7 @@
+com\example\DashboardController.class
+com\example\.settings\org.eclipse.jdt.core.prefs
+com\example\LoginController.class
+com\example\SQLDatabaseConnection.class
+module-info.class
+com\example\App.class
+com\example\Command.class
