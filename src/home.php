@@ -121,6 +121,7 @@ if (filledIn($_POST['uname'], $_POST['password'])) {
 <head>
     <title>yOUr Money Dashboard Page</title>
     <link rel="stylesheet" href="./css/dashboard_page.css"/>
+    <script src="./js/dash.js"></script>
 </head>
 
 <body>
@@ -137,7 +138,7 @@ if (filledIn($_POST['uname'], $_POST['password'])) {
         </div>
 
         <div class = "checking_balance">
-            <h1 id="checking_balance_amount">$<?php echo $Checking;?></h1>
+            <h1 id="checking_balance_amount">100</h1>
         </div>
     </div>
 
@@ -147,7 +148,7 @@ if (filledIn($_POST['uname'], $_POST['password'])) {
         </div>
 
         <div class = "savings_balance">
-            <h1 id="savings_balance_amount">$<?php echo $Savings;?></h1>
+            <h1 id="saving_balance_amount">100</h1>
         </div>
     </div>
 
@@ -158,13 +159,13 @@ if (filledIn($_POST['uname'], $_POST['password'])) {
 
         <form id="login" class="user_input">
             <p1>To</p1>
-            <input class="input" placeholder="Type 'Checking' or 'Savings'" name="accdepo">
+            <input id="deposit_from_account" class="input" placeholder="Type 'Checking' or 'Savings'" name="accdepo">
 
             <p1>Amount</p1>
-            <input class="input" placeholder="0.00" required type="number" name="amtdepo">
+            <input id="deposit_amount" class="input" placeholder="0.00" required type="number" name="amtdepo">
 
             <div class="for_button">
-                <button type="button" class="deposit_withdraw_button">Deposit</button>
+                <button onclick="deposit()" id="deposit_button" type="button" class="deposit_withdraw_button">Deposit</button>
             </div>
         </form>
     </div>
@@ -176,13 +177,13 @@ if (filledIn($_POST['uname'], $_POST['password'])) {
 
         <form id="login" class="user_input">
             <p1>From</p1>
-            <input class="input" placeholder="Type 'Checking' or 'Savings'" name="accdepo">
+            <input id="from_account" class="input" placeholder="Type 'Checking' or 'Savings'" name="accdepo">
 
             <p1>Amount</p1>
-            <input class="input" placeholder="0.00" required type="number" name="amtdepo">
+            <input id="withdraw_amount" class="input" placeholder="0.00" required type="number" name="amtdepo">
 
             <div class="for_button">
-                <button type="button" class="deposit_withdraw_button">Withdraw</button>
+                <button onclick="withdraw()" id="the_withdraw_button" type="button" class="deposit_withdraw_button">Withdraw</button>
             </div>
         </form>
     </div>
