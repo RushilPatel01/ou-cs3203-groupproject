@@ -51,7 +51,8 @@ body {
 
 .logo {
     position: relative;
-    bottom: 175px;
+    top: 30px;
+    left: 35px;
 }
 
 .error {

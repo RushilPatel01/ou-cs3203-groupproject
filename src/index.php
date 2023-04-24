@@ -10,7 +10,7 @@
     <div class="login_box">
 
         <div class="logo">
-            <img src="./png/yOUr Money Logo 1.png" alt="yOUr Money Logo" class="yOUr_Money_Logo">
+            <img src="./png/yOUr_Money_Logo_1.png" alt="yOUr Money Logo" class="yOUr_Money_Logo">
         </div>
 
         <form id="login" class="user_input" action="./home.php" method="post">

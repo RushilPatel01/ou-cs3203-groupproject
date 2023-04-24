@@ -1,26 +1,114 @@
 <?php 
 include "db_conn.php";
-if (isset($_POST['uname']) && isset($_POST['password'])) {
-    function validate($data){
-       $data = trim($data);
-       $data = stripslashes($data);
-       $data = htmlspecialchars($data);
-       return $data;
+function verifyInfo($name, $word, $checkName, $checkWord){
+    if($name == $checkName){
+        if($word == $checkWord){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
-    $uname = validate($_POST['uname']);
-    $pass = validate($_POST['password']);
-    if (empty($uname)) {
-        echo "user empty\n";
+    else{
+        return false;
+    }
+}
+
+function filledIn($user, $userp){
+    if(isset($user)){
+        if(isset($userp)){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    else{
+        return false;
+    }
+}
+
+function emp($unam, $passs){
+    if (empty($unam)) {
+        echo "user empty";
         exit();
-    }else if(empty($pass)){
-        echo "password empty\n";
+    }else if(empty($passs)){
+        echo "password empty";
         exit();
     }else{
+        return true;
+    }
+}
+
+function deposit($old, $current, $link, $acc){
+    if (emp($old, $current)){
+        $add = $old + $current;
+        if($acc=="Checking"){
+            $sql = "UPDATE bank_info SET Checking = '$add'";
+            $result = mysqli_query($link, $sql);
+            succQuery($result);
+        }
+        elseif($acc=="Savings"){
+            $sql = "UPDATE bank_info SET Savings = '$add'";
+            $result = mysqli_query($link, $sql);
+            succQuery($result);
+            return;
+        }
+        else{
+            echo "Wtf happened";
+        }
+    }
+}
+
+function withdraw($old, $current, $link, $acc){
+    if (emp($old, $current)){
+        $sub = $current - $old;
+        if($acc=="Checking"){
+            $sql = "UPDATE bank_info SET Checking = '$sub'";
+            $result = mysqli_query($link, $sql);
+            succQuery($result);
+        }
+        elseif($acc=="Savings"){
+            $sql = "UPDATE bank_info SET Savings = '$sub'";
+            $result = mysqli_query($link, $sql);
+            succQuery($result);
+            return;
+        }
+        else{
+            echo "Wtf happened";
+        }
+    }
+}
+
+function succQuery($info){
+    if($info){
+        return;
+    }
+    else{
+        echo "Query failed";
+        exit;
+    }
+}
+
+function validate($data){
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+ }
+
+if (filledIn($_POST['uname'], $_POST['password'])) {
+    $uname = validate($_POST['uname']);
+    $pass = validate($_POST['password']);
+    if (emp($uname, $pass)){
         $sql = "SELECT * FROM bank_info WHERE UName='$uname' AND Pword='$pass'";
         $result = mysqli_query($conn, $sql);
+        succQuery($result);
         if (mysqli_num_rows($result) == 1) {
             $row = mysqli_fetch_assoc($result);
-            if ($row['UName'] == $uname && $row['Pword'] == $pass) {
+            $ucheck = $row['UName'];
+            $pcheck = $row['Pword'];
+            if (verifyInfo($uname, $pass, $ucheck, $pcheck)) {
 #                echo "Logged in!\n";
                 $FName = $row['FName'];
                 $LName = $row['LName'];
@@ -39,39 +127,68 @@ if (isset($_POST['uname']) && isset($_POST['password'])) {
 
     <div class="side_menu">
         <div class="logo">
-            <img src="./png/yOUr Money Logo 1.png" alt="yOUr Money Logo" class="yOUr_Money_Logo">
-        </div>
-        <ul>
-            <li><a href="" class="hover_effect">Accounts</a></li>
-            <li><a href="./deposit_page.php" class="hover_effect">Deposit</a></li>
-            <li><a href="./withdraw_page.php" class="hover_effect">Withdraw</a></li>
-            <li><a href="./index.php" class="hover_effect">Logout</a></li>
-        </ul>
-    </div>
-
-    <div class = "accounts_box">
-        <div class = "accounts_header">
-            <h1>Accounts</h1>
-        </div>
-
-        <div class = "accounts">
-            <li><a href="./dashboard_page_yOUr_Account_Checking.php" class="accounts_hover">yOUr Account Checking</a></li>
-            <li><a href="./dashboard_page_yOUr_Account_Saving.php" class="accounts_hover">yOUr Account Savings</a></li>
+            <img src="./png/yOUr_Money_Logo_1.png" alt="yOUr Money Logo" class="yOUr_Money_Logo">
         </div>
     </div>
 
-    <div class = "balance_box">
-        <div class = "balance_header">
-            <h1>Balance</h1>
+    <div class = "checking_balance_box">
+        <div class = "checking_balance_header">
+            <h1>Checking Balance</h1>
         </div>
 
-        <div class = "balance">
-            <h2>Checking</h2>
-            <h3>$<?php echo $Checking;?></h3>
+        <div class = "checking_balance">
+            <h1 id="checking_balance_amount">$<?php echo $Checking;?></h1>
         </div>
+    </div>
+
+    <div class = "savings_balance_box">
+        <div class = "savings_balance_header">
+            <h1>Savings Balance</h1>
+        </div>
+
+        <div class = "savings_balance">
+            <h1 id="savings_balance_amount">$<?php echo $Savings;?></h1>
+        </div>
+    </div>
+
+    <div class = "deposit_box">
+        <div class = "deposit_header">
+            <h1>Deposit</h1>
+        </div>
+
+        <form id="login" class="user_input">
+            <p1>To</p1>
+            <input class="input" placeholder="Type 'Checking' or 'Savings'" name="accdepo">
+
+            <p1>Amount</p1>
+            <input class="input" placeholder="0.00" required type="number" name="amtdepo">
+
+            <div class="for_button">
+                <button type="button" class="deposit_withdraw_button">Deposit</button>
+            </div>
+        </form>
+    </div>
+
+    <div class = "withdraw_box">
+        <div class = "withdraw_header">
+            <h1>Withdraw</h1>
+        </div>
+
+        <form id="login" class="user_input">
+            <p1>From</p1>
+            <input class="input" placeholder="Type 'Checking' or 'Savings'" name="accdepo">
+
+            <p1>Amount</p1>
+            <input class="input" placeholder="0.00" required type="number" name="amtdepo">
+
+            <div class="for_button">
+                <button type="button" class="deposit_withdraw_button">Withdraw</button>
+            </div>
+        </form>
     </div>
     
 </body>
+
 </html>
 <?php 
             }else{
