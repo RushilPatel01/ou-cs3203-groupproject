@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>yOUr Money Dashboard Page</title>
+    <link rel="stylesheet" href="deposit_page.css"/>
+    <script src="dashboard_page.js"></script>
+</head>
+
+<body>
+
+    <div class="side_menu">
+        <div class="logo">
+            <img src="yOUr Money Logo 1.png" alt="yOUr Money Logo" class="yOUr_Money_Logo">
+        </div>
+        <ul>
+            <li><a href="dashboard_page_yOUr_Account_Checking.html" class="hover_effect">Accounts</a></li>
+            <li><a href="deposit_page.html" class="hover_effect">Deposit</a></li>
+            <li><a href="withdraw_page.html" class="hover_effect">Withdraw</a></li>
+            <li><a href="/login_page/login_page.html" class="hover_effect">Logout</a></li>
+        </ul>
+    </div>
+
+    <div class = "deposit_box">
+        <div class = "deposit_header">
+            <h1>Deposit</h1>
+        </div>
+
+        <form id="login" class="user_input">
+            <p1>To</p1>
+            <input id="deposit_from_account" class="input" placeholder="Type 'Checking' or 'Savings'">
+
+            <p1>Amount</p1>
+            <input id="deposit_amount" class="input" placeholder="0.00" required type="number">
+
+            <div class="button_wrapper">
+                <button onclick="deposit()" id="deposit_button" type="button" class="deposit_button">Deposit</button>
+            </div>
+        </form>
+    </div>
+
+    <div class = "checking_balance_box">
+        <div class = "checking_balance_header">
+            <h1>Checking Balance</h1>
+        </div>
+
+        <div class = "checking_balance">
+            <h1 id="deposit_checking_balance_amount">5000</h1>
+        </div>
+    </div>
+
+    <div class = "saving_balance_box">
+        <div class = "saving_balance_header">
+            <h1>Savings Balance</h1>
+        </div>
+
+        <div class = "saving_balance">
+            <h1 id="deposit_saving_balance_amount">5000</h1>
+        </div>
+
+</body>
+
+</html>
