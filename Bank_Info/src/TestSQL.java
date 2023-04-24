@@ -49,7 +49,14 @@ class TestSQL {
 	        double initialBalance = SQLDatabaseConnection.getUserBalance(USERNAME, "Checking");
 	        assertFalse(SQLDatabaseConnection.withdrawal(USERNAME, "Checking", initialBalance + 1000000000.0));
 	    } 
-	    
+	    @Test
+	    public void testNegWithdraw() {
+	        // Test withdraw
+	        double initialBalance = SQLDatabaseConnection.getUserBalance(USERNAME, "Checking");
+	        SQLDatabaseConnection.withdrawal(USERNAME, "Checking", -100.0);
+	        double newBalance = SQLDatabaseConnection.getUserBalance(USERNAME, "Checking");
+	        assertEquals(initialBalance, newBalance, 0.001);
+	        }
 	    @Test
 	    public void testMatchUserLoginBadPassword() {
 	        boolean expected = true;

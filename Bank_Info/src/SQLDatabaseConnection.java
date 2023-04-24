@@ -144,7 +144,7 @@ public class SQLDatabaseConnection {
 	public static boolean withdrawal(String userName, String accountType, double withdraw) {
 		double currentBalance = getUserBalance(userName, accountType);
 		boolean sufficientFunds = false;
-		if(currentBalance >= withdraw) {
+		if(currentBalance >= withdraw && withdraw >0) {
 			double newBalance = currentBalance - withdraw;
 			String convertedBal = Double.toString(newBalance);
 			String updateBank = "Update dbo.Accounts " + "set Balance = " + convertedBal + "where id like \'" + userName + "\'" + "AND Type like \'" + accountType + "\' " ;
