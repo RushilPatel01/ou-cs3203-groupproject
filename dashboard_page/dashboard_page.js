@@ -1,5 +1,3 @@
-let globalNum = 5000;
-
 function deposit() {
     let balance = 5000;
     const get_deposit_amount = document.querySelector("#deposit_amount");
@@ -27,7 +25,6 @@ function deposit() {
     }
 
 function withdraw() {
-    let balance = globalNum;
     const get_withdraw_amount = document.querySelector("#withdraw_amount");
     const get_from_account = document.querySelector("#from_account");
 

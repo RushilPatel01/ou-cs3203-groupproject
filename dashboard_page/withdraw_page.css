@@ -43,7 +43,7 @@ body {
 
 .deposit_box {
     position: fixed;
-    margin-left: 900px;
+    margin-left: 550px;
     margin-top: 170px;
     width: 400px;
     height: 500px;
@@ -98,4 +98,54 @@ body {
     margin: 50px auto;
     border-radius: 10px;
 }
+
+/* Checking Balance */
+
+.checking_balance_box {
+    position: fixed;
+    margin-left: 1050px;
+    margin-top: 260px;
+    width: 500px;
+    height: 125px;
+    background-color: #FDF9D8;
+    border-radius: 10px;
+}
+
+.checking_balance_header {
+    padding-left: 115px;
+    padding-top: 7px;
+    border-bottom: 3px solid black;
+}
+
+.checking_balance {
+    padding-left: 15px;
+    padding-top: 20px;
+}
+
+/* ------------------- */
+
+/* Savings Balance */
+
+.saving_balance_box {
+    position: fixed;
+    margin-left: 1050px;
+    margin-top: 450px;
+    width: 500px;
+    height: 125px;
+    background-color: #FDF9D8;
+    border-radius: 10px;
+}
+
+.saving_balance_header {
+    padding-left: 125px;
+    padding-top: 7px;
+    border-bottom: 3px solid black;
+}
+
+.saving_balance {
+    padding-left: 15px;
+    padding-top: 20px;
+}
+
+/* ------------------- */
 

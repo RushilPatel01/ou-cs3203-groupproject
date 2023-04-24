@@ -4,6 +4,7 @@
 <head>
     <title>yOUr Money Dashboard Page</title>
     <link rel="stylesheet" href="withdraw_page.css"/>
+    <script src="dashboard_page.js"></script>
 </head>
 
 <body>
@@ -22,22 +23,41 @@
 
     <div class = "deposit_box">
         <div class = "deposit_header">
-            <h1>Withdraw</h1>
+            <h1 id="test">Withdraw</h1>
         </div>
 
         <form id="login" class="user_input">
             <p1>From</p1>
-            <input class="input" placeholder="Type 'Checking' or 'Savings'" required type="number">
+            <input id="from_account" class="input" placeholder="Type 'Checking' or 'Savings'">
 
             <p1>Amount</p1>
-            <input class="input" placeholder="0.00" required type="number">
+            <input id="withdraw_amount" class="input" placeholder="0.00" required type="number">
 
             <div class="button_wrapper">
-                <button type="button" class="deposit_button">Withdraw</button>
+            <button onclick="withdraw()" id="the_withdraw_button" type="button" class="deposit_button">Withdraw</button>
             </div>
         </form>
     </div>
 
+    <div class = "checking_balance_box">
+        <div class = "checking_balance_header">
+            <h1>Checking Balance</h1>
+        </div>
+
+        <div class = "checking_balance">
+            <h1 id="checking_balance_amount">5000</h1>
+        </div>
+    </div>
+
+    <div class = "saving_balance_box">
+        <div class = "saving_balance_header">
+            <h1>Savings Balance</h1>
+        </div>
+
+        <div class = "saving_balance">
+            <h1 id="saving_balance_amount">5000</h1>
+        </div>
+    </div>
 </body>
 
 </html>
