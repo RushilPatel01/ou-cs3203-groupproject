@@ -13,9 +13,9 @@
             <img src="./png/yOUr Money Logo 1.png" alt="yOUr Money Logo" class="yOUr_Money_Logo">
         </div>
 
-        <form id="login" class="user_input" action="./login.php" method="post">
+        <form id="login" class="user_input" action="./home.php" method="post">
             <?php if (isset($_GET['error'])) { ?>
-                <p class="error"><?php echo $_GET['error']; ?></p>
+                <p class="error"><?php echo $_GET['error'] + "\n"; ?></p>
             <?php } ?>
             <input class="email_password" placeholder="Enter 4x4" type="text" maxlength="8" name="uname">
 
