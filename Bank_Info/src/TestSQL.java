@@ -22,9 +22,16 @@ class TestSQL {
 	    }
 
 	    @Test
-	    public void testDeposit() {
+	    public void testPosDeposit() {
 	        double expected = SQLDatabaseConnection.getUserBalance(USERNAME, "Checking") + 100.0;
 	        SQLDatabaseConnection.deposit(USERNAME, "Checking", 100.0);
+	        double actual = SQLDatabaseConnection.getUserBalance(USERNAME, "Checking");
+	        Assertions.assertEquals(expected, actual);
+	    }
+	    @Test
+	    public void testNegDeposit() {
+	        double expected = SQLDatabaseConnection.getUserBalance(USERNAME, "Checking");
+	        SQLDatabaseConnection.deposit(USERNAME, "Checking", -100.0);
 	        double actual = SQLDatabaseConnection.getUserBalance(USERNAME, "Checking");
 	        Assertions.assertEquals(expected, actual);
 	    }

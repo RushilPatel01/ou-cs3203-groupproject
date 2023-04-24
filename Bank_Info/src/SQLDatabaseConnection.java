@@ -145,7 +145,11 @@ public class SQLDatabaseConnection {
 		double currentBalance = getUserBalance(userName, accountType);
 		boolean sufficientFunds = false;
 		if(currentBalance >= withdraw) {
-			deposit(userName, accountType, -withdraw);
+			double newBalance = currentBalance - withdraw;
+			String convertedBal = Double.toString(newBalance);
+			String updateBank = "Update dbo.Accounts " + "set Balance = " + convertedBal + "where id like \'" + userName + "\'" + "AND Type like \'" + accountType + "\' " ;
+			Command update = Command.UPDATEB;
+			connect(updateBank, update);
 			sufficientFunds = true;
 		}
 		else {
