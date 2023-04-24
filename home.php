@@ -1,5 +1,4 @@
 <?php 
-session_start(); 
 include "db_conn.php";
 if (isset($_POST['uname']) && isset($_POST['password'])) {
     function validate($data){
@@ -23,11 +22,10 @@ if (isset($_POST['uname']) && isset($_POST['password'])) {
             $row = mysqli_fetch_assoc($result);
             if ($row['UName'] == $uname && $row['Pword'] == $pass) {
 #                echo "Logged in!\n";
-                $_SESSION['FName'] = $row['FName'];
-                $_SESSION['LName'] = $row['LName'];
-                $_SESSION['Checking'] = $row['Checking'];
-                $_SESSION['Savings'] = $row['Savings'];
-                $_SESSION['id'] = $row['id'];
+                $FName = $row['FName'];
+                $LName = $row['LName'];
+                $Checking = $row['Checking'];
+                $Savings = $row['Savings'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -44,7 +42,7 @@ if (isset($_POST['uname']) && isset($_POST['password'])) {
             <img src="./png/yOUr Money Logo 1.png" alt="yOUr Money Logo" class="yOUr_Money_Logo">
         </div>
         <ul>
-            <li><a href="./dashboard_page_yOUr_Account_Checking.php" class="hover_effect">Accounts</a></li>
+            <li><a href="" class="hover_effect">Accounts</a></li>
             <li><a href="./deposit_page.php" class="hover_effect">Deposit</a></li>
             <li><a href="./withdraw_page.php" class="hover_effect">Withdraw</a></li>
             <li><a href="./index.php" class="hover_effect">Logout</a></li>
@@ -68,7 +66,8 @@ if (isset($_POST['uname']) && isset($_POST['password'])) {
         </div>
 
         <div class = "balance">
-            <h1>$0</h1>
+            <h2>Checking</h2>
+            <h3>$<?php echo $Checking;?></h3>
         </div>
     </div>
     
