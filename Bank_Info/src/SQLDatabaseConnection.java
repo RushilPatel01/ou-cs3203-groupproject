@@ -6,6 +6,13 @@ import java.sql.Statement;
 import java.sql.PreparedStatement;
 import java.util.ArrayList;
 import java.util.Arrays;
+import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
 
 public class SQLDatabaseConnection {
     // Connect to your database.
@@ -121,7 +128,8 @@ public class SQLDatabaseConnection {
 	 */
 	public static void deposit(String userName, String accountType,  double deposit ) {
 		double currentBalance = getUserBalance(userName, accountType);
-		double newBalance = currentBalance + deposit;
+		 double newBalance = currentBalance;
+		if(deposit > 0) newBalance += deposit;
 		String convertedBal = Double.toString(newBalance);
 		String updateBank = "Update dbo.Accounts " + "set Balance = " + convertedBal + "where id like \'" + userName + "\'" + "AND Type like \'" + accountType + "\' " ;
 		Command update = Command.UPDATEB;
