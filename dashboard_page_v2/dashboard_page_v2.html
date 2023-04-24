@@ -21,7 +21,7 @@
         </div>
 
         <div class = "checking_balance">
-            <h1 id="checking_balance_amount">$0</h1>
+            <h1 id="checking_balance_amount">100</h1>
         </div>
     </div>
 
@@ -31,7 +31,7 @@
         </div>
 
         <div class = "savings_balance">
-            <h1 id="savings_balance_amount">$0</h1>
+            <h1 id="savings_balance_amount">100</h1>
         </div>
     </div>
 
@@ -42,13 +42,13 @@
 
         <form id="login" class="user_input">
             <p1>To</p1>
-            <input class="input" placeholder="Type 'Checking' or 'Savings'">
+            <input id="deposit_from_account" class="input" placeholder="Type 'Checking' or 'Savings'">
 
             <p1>Amount</p1>
-            <input class="input" placeholder="0.00" required type="number">
+            <input id="deposit_amount" class="input" placeholder="0.00" required type="number">
 
             <div class="for_button">
-                <button type="button" class="deposit_withdraw_button">Deposit</button>
+                <button onclick="deposit()" id="deposit_button" type="button" class="deposit_withdraw_button">Deposit</button>
             </div>
         </form>
     </div>
@@ -60,13 +60,13 @@
 
         <form id="login" class="user_input">
             <p1>From</p1>
-            <input class="input" placeholder="Type 'Checking' or 'Savings'" required type="number">
+            <input id="from_account" class="input" placeholder="Type 'Checking' or 'Savings'">
 
             <p1>Amount</p1>
-            <input class="input" placeholder="0.00" required type="number">
+            <input id="withdraw_amount" class="input" placeholder="0.00" required type="number">
 
             <div class="for_button">
-                <button type="button" class="deposit_withdraw_button">Withdraw</button>
+                <button onclick="withdraw()" type="button" class="deposit_withdraw_button">Withdraw</button>
             </div>
         </form>
     </div>
