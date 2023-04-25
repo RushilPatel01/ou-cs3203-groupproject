@@ -1,0 +1,52 @@
+@page
+@model IndexModel
+
+@{
+    ViewData["Title"] = "Checking Page";
+}
+
+
+<head>
+    <title>yOUr Money Dashboard Page</title>
+    <link rel="stylesheet" href="dashboard_page.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+    <div class="side_menu">
+        <div class="logo">
+            <img src="yOUr Money Logo 1.png" alt="yOUr Money Logo" class="yOUr_Money_Logo">
+        </div>
+        <ul>
+            <li><a href="/dashboard_page_yOUr_Account_Checking" class="hover_effect">Accounts</a></li>
+            <li><a href="/deposit_page" class="hover_effect">Deposit</a></li>
+            <li><a href="/withdraw_page" class="hover_effect">Withdraw</a></li>
+            <li><a href="/Index" class="hover_effect">Logout</a></li>
+        </ul>
+    </div>
+
+    <div class = "accounts_box">
+        <div class = "accounts_header">
+            <h1>Accounts</h1>
+        </div>
+
+        <div class = "accounts">
+            <li><a href="/dashboard_page_yOUr_Account_Checking" class="accounts_hover">yOUr Account Checking</a></li>
+            <li><a href="/dashboard_page_yOUr_Account_Saving" class="accounts_hover">yOUr Account Savings</a></li>
+        </div>
+    </div>
+
+    <div class = "balance_box">
+        <div class = "balance_header">
+            <h1>Balance</h1>
+        </div>
+
+        <div class = "balance">
+            <h1>$0</h1>
+        </div>
+    </div>
+    
+</body>
+
+</html>

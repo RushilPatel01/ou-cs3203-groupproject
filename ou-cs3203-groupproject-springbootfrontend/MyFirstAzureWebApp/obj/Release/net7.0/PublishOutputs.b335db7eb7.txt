@@ -1,0 +1,7 @@
+C:\Users\skbro\OneDrive - University of Oklahoma\SCHOOL\8 - SPRING 2023\SOFTWARE\Group Project\MyFirstAzureWebApp\bin\Release\net7.0\publish\MyFirstAzureWebApp.exe
+C:\Users\skbro\OneDrive - University of Oklahoma\SCHOOL\8 - SPRING 2023\SOFTWARE\Group Project\MyFirstAzureWebApp\bin\Release\net7.0\publish\appsettings.Development.json
+C:\Users\skbro\OneDrive - University of Oklahoma\SCHOOL\8 - SPRING 2023\SOFTWARE\Group Project\MyFirstAzureWebApp\bin\Release\net7.0\publish\appsettings.json
+C:\Users\skbro\OneDrive - University of Oklahoma\SCHOOL\8 - SPRING 2023\SOFTWARE\Group Project\MyFirstAzureWebApp\bin\Release\net7.0\publish\MyFirstAzureWebApp.dll
+C:\Users\skbro\OneDrive - University of Oklahoma\SCHOOL\8 - SPRING 2023\SOFTWARE\Group Project\MyFirstAzureWebApp\bin\Release\net7.0\publish\MyFirstAzureWebApp.deps.json
+C:\Users\skbro\OneDrive - University of Oklahoma\SCHOOL\8 - SPRING 2023\SOFTWARE\Group Project\MyFirstAzureWebApp\bin\Release\net7.0\publish\MyFirstAzureWebApp.runtimeconfig.json
+C:\Users\skbro\OneDrive - University of Oklahoma\SCHOOL\8 - SPRING 2023\SOFTWARE\Group Project\MyFirstAzureWebApp\bin\Release\net7.0\publish\MyFirstAzureWebApp.pdb
