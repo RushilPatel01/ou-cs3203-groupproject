@@ -177,7 +177,7 @@ if (filledIn($_POST['uname'], $_POST['password'])) {
 
         <form id="login" class="user_input">
             <p1>From</p1>
-            <input id="from_account" class="input" placeholder="Type 'Checking' or 'Savings'" name="accdepo">
+            <input id="withdraw_from_account" class="input" placeholder="Type 'Checking' or 'Savings'" name="accdepo">
 
             <p1>Amount</p1>
             <input id="withdraw_amount" class="input" placeholder="0.00" required type="number" name="amtdepo">
