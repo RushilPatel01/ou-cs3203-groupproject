@@ -148,7 +148,7 @@ if (filledIn($_POST['uname'], $_POST['password'])) {
         </div>
 
         <div class = "savings_balance">
-            <h1 id="saving_balance_amount">100</h1>
+            <h1 id="savings_balance_amount">100</h1>
         </div>
     </div>
 
